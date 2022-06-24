@@ -1,5 +1,5 @@
 function App() {
-  return <div>App</div>;
+  return <div>http://shimlee.co.kr/</div>;
 }
 
 export default App;
