@@ -1,5 +1,6 @@
 import { HelmetProvider } from "react-helmet-async";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { Header } from "./components/Header";
 import { Home } from "./components/pages/home/Home";
 import { Menu } from "./components/pages/menu/Menu";
 import { NotFound } from "./components/pages/NotFound";
@@ -10,9 +11,9 @@ function App() {
     <HelmetProvider>
       <Router>
         <GlobalStyle />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/detail/:id" element={<Detail />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
