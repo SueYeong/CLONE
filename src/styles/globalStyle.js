@@ -8,9 +8,9 @@ export const mainStyle = {
 export const GlobalStyle = createGlobalStyle`
 ${reset}
 body{
-    font-family: 'Noto Serif KR', serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 a{
-    text-decoration: none;
+  text-decoration: none;
 }
 `;

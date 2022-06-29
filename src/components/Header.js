@@ -22,6 +22,7 @@ const SHeader = styled.div`
 `;
 
 const Logo = styled.h1`
+  font-family: "Noto Serif KR", serif;
   font-size: 22px;
   font-weight: 800;
   width: 120px;
