@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mainStyle } from "../styles/globalStyle";
+import { Menu } from "./pages/menu/Menu";
 
 const SHeader = styled.div`
   display: flex;
@@ -16,6 +17,7 @@ const SHeader = styled.div`
     width: 48px;
     height: 48px;
     svg {
+      color: black;
       font-size: 22px;
     }
   }
@@ -51,6 +53,7 @@ export const Header = () => {
         <button>
           <FontAwesomeIcon icon={faBars} />
         </button>
+        <Menu />
       </SHeader>
     </div>
   );

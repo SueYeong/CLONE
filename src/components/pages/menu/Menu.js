@@ -1,6 +1,10 @@
-import { faArrowRightLong, faPlus } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faArrowUpRightFromSquare,
+  faPlus,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Wrap = styled.div`
   position: absolute;
@@ -22,9 +26,11 @@ const MenusWrap = styled.div`
 `;
 
 const Menus = styled.div`
+  height: 100vh;
   padding: 0 108px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 `;
 
 const MainMenu = styled.div`
@@ -32,12 +38,20 @@ const MainMenu = styled.div`
   flex-direction: column;
   span {
     font-size: 50px;
-    font-weight: 800;
+    font-weight: 600;
+    margin-bottom: 50px;
+    svg {
+      font-weight: 100;
+      transform: rotateZ(-45deg);
+      display: none;
+      margin-left: 100px;
+    }
     &:hover {
       color: #007aff;
-    }
-    svg {
-      /* display: none; */
+      display: flex;
+      svg {
+        display: flex;
+      }
     }
   }
 `;
@@ -45,9 +59,45 @@ const MainMenu = styled.div`
 const SubMenu = styled.div`
   display: flex;
   flex-direction: column;
-  span {
+  margin-top: 100px;
+  font-size: 20px;
+  font-weight: 600;
+  span:last-child {
+    color: #59089e;
     svg {
-      display: none;
+      margin-left: 30px;
+      font-weight: 300;
+    }
+  }
+`;
+
+const move = keyframes`
+0%{
+  transform: rotateZ(0);
+}
+100%{
+  transform: rotateZ(90deg);
+}
+`;
+
+const SubMenus = styled.div`
+  margin-bottom: 50px;
+  span {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 50px;
+  }
+  svg {
+    margin-left: 25px;
+    font-weight: 300;
+  }
+  &:hover {
+    color: #007aff;
+    svg {
+      animation: ${move} 0.5s;
+    }
+    &:nth-child(3) svg {
+      animation: none;
     }
   }
 `;
@@ -60,32 +110,36 @@ export const Menu = () => {
           <Menus>
             <MainMenu>
               <span>
-                ABOUT
-                <FontAwesomeIcon icon={faArrowRightLong} />
+                <p>ABOUT</p>
+                <FontAwesomeIcon icon={faArrowRight} />
               </span>
               <span>
-                PRACTICE
-                <FontAwesomeIcon icon={faArrowRightLong} />
+                <p>PRACTICE</p>
+                <FontAwesomeIcon icon={faArrowRight} />
               </span>
               <span>
-                PROFESSIONALS
-                <FontAwesomeIcon icon={faArrowRightLong} />
+                <p>PROFESSIONALS</p>
+                <FontAwesomeIcon icon={faArrowRight} />
               </span>
               <span>
-                INSIGHT
-                <FontAwesomeIcon icon={faArrowRightLong} />
+                <p>INSIGHT</p>
+                <FontAwesomeIcon icon={faArrowRight} />
               </span>
             </MainMenu>
             <SubMenu>
-              <span>
-                상담 신청
+              <SubMenus>
+                <span>상담 신청</span>
                 <FontAwesomeIcon icon={faPlus} />
-              </span>
-              <span>
-                사무소 위치
+              </SubMenus>
+              <SubMenus>
+                <span>사무소 위치</span>
                 <FontAwesomeIcon icon={faPlus} />
+              </SubMenus>
+
+              <span>
+                성범죄 피해 센터
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </span>
-              <span>성범죄 피해 센터</span>
             </SubMenu>
           </Menus>
         </MenusWrap>
