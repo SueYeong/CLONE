@@ -1,5 +1,6 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { click } from "@testing-library/user-event/dist/click";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mainStyle } from "../styles/globalStyle";
@@ -42,6 +43,13 @@ const Logo = styled.h1`
 `;
 
 export const Header = () => {
+  // const btn = document.querySelector(".bar");
+  // console.log(btn);
+  // const handleClick = () => {
+  //   btn.classList.toggle("");
+  // };
+  // btn.addEventListener("click", handleClick);
+
   return (
     <div>
       <SHeader>
@@ -50,7 +58,7 @@ export const Header = () => {
             shim & lee <span>LAW OFFICE</span>
           </Link>
         </Logo>
-        <button>
+        <button className="bar">
           <FontAwesomeIcon icon={faBars} />
         </button>
         <Menu />

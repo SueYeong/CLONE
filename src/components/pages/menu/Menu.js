@@ -40,17 +40,21 @@ const MainMenu = styled.div`
     font-size: 50px;
     font-weight: 600;
     margin-bottom: 50px;
+    display: flex;
     svg {
-      font-weight: 100;
+      margin-left: 80px;
+      opacity: 0.5;
       transform: rotateZ(-45deg);
-      display: none;
-      margin-left: 100px;
+      transition: 0.8s;
     }
     &:hover {
       color: #007aff;
       display: flex;
       svg {
+        width: 40px;
         display: flex;
+        transform: rotateZ(-45deg) translate(10px, -10px);
+        opacity: 1;
       }
     }
   }
