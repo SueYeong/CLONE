@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 ${reset}
 body{
   font-family: 'Noto Sans KR', sans-serif;
+  overflow-x: hidden;
 }
 a{
   text-decoration: none;
